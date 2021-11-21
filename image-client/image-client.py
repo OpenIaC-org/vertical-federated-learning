@@ -5,4 +5,4 @@ from torchvision.transforms import ToTensor
 from utils import *
 
 images = preprocess(MNIST('./data', download=True, transform=ToTensor()))
-print(images[0:5])
+print(len(images))
