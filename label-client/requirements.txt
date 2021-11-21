@@ -1,1 +1,1 @@
-torchvision==0.11.1n
+torchvision==0.11.1
