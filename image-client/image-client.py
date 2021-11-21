@@ -1,8 +1,8 @@
 from torchvision.datasets import MNIST
 from torchvision.transforms import ToTensor
 
+
 from utils import *
 
-data = MNIST('./data', download=True, transform=ToTensor())
-data = remove_label(data)
-print(data[0])
+images = preprocess(MNIST('./data', download=True, transform=ToTensor()))
+show_images(images[0:5])
