@@ -6,7 +6,6 @@ class Controller:
   async def handler(self):
     while True:
       message = await ainput()
-      print(message)
       await self.websocket.send(message)
 
   async def connect(self):

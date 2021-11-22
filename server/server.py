@@ -12,7 +12,6 @@ class Server:
     while True:
       try:
         data = await websocket.recv()
-        print(data)
 
         await self.client_endpoints(websocket, data)
         await self.controller_endpoints(websocket, data)
@@ -25,17 +24,20 @@ class Server:
       await self.handle_connection(websocket)
 
     if data == 'ids':
-      ids = await websocket.recv()
+      ids = pickle.loads(await websocket.recv())
       self.ids.append(ids)
+      if len(self.ids) == 2:
+        print('Got all IDs')
 
   async def controller_endpoints(self, websocket, data):
-    if data == 'distribute':
-      await self.distribute_ids()
+    if data == 'get ids':
+      await self.get_ids()
     
     if data == 'permute':
       common_ids = await self.find_id_permutation()
       await self.send_to_all('common_ids')
       await self.send_to_all(pickle.dumps(common_ids))
+      print('Sent common IDs to all clients')
 
 
   async def handle_connection(self, websocket):
@@ -43,7 +45,7 @@ class Server:
     await websocket.send(str(websocket.id))
     print('Client ' + str(websocket.id) + ' connected')
 
-  async def distribute_ids(self):
+  async def get_ids(self):
     if len(self.clients) != 2:
       print('Incorrect number of clients: ' + str(len(self.clients)))
       return
@@ -51,14 +53,13 @@ class Server:
     await self.send_to_all('get_ids')
   
   async def find_id_permutation(self):
-    if len(self.ids != 2):
+    if len(self.ids) != 2:
       print('Incorrect number of ids: ' + str(len(self.ids)))
       return
     
-    common_ids = []
-    for current_id in self.ids[0]:
-      if current_id in self.ids[1]:
-        common_ids.append(current_id)
+    print('Finding common ids')
+    common_ids = list(set(self.ids[0]).intersection(self.ids[1]))
+    print(f'Found {len(common_ids)} common ids')
     return common_ids
   
   async def send_to_all(self, data):
