@@ -17,8 +17,7 @@ class LabelClient:
         await self.websocket.send(pickle.dumps([lab[1] for lab in self.labels]))
       
       if msg == 'common_ids':
-        self.ids = await self.websocket.recv()
-        print(self.ids[:10])
+        self.ids = pickle.loads(await self.websocket.recv())
 
 
 client = LabelClient()

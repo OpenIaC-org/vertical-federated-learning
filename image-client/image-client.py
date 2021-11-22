@@ -15,6 +15,9 @@ class ImageClient:
       if msg == 'get_ids':
         await self.websocket.send('ids')
         await self.websocket.send(pickle.dumps([img[1] for img in self.images]))
+      
+      if msg == 'common_ids':
+        self.ids = pickle.loads(await self.websocket.recv())
 
 client = ImageClient()
 asyncio.get_event_loop().run_until_complete(client.handler())
