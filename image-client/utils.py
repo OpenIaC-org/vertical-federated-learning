@@ -1,5 +1,7 @@
+import asyncio
 import random
 import matplotlib.pyplot as plt
+import websockets
 
 def preprocess(data):
   """ Preprocesses data for image client
@@ -28,3 +30,14 @@ def show_images(images):
     plt.axis('off')
     show_image(image, multiple=True)
   plt.show()
+
+async def create_websocket():
+  try:
+    websocket = await websockets.connect('ws://localhost:8000', ping_interval=None)
+    await websocket.send('connect')
+    print('Connected to server')
+    return websocket
+  except:
+    print('Connection failed, trying again in 2 seconds')
+    await asyncio.sleep(2)
+    return await create_websocket()

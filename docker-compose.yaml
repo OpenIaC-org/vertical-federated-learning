@@ -1,22 +1,22 @@
 version: "3"
 
 services:
-  # server:
-  #   build: server/
-  #   ports:
-  #     - 8000:8000
-  #   command: python3 -u ./server.py
+  server:
+    build: server/
+    ports:
+      - 8000:8000
+    command: python3 -u ./server.py
 
   image-client:
     build: image-client/
     network_mode: host
-    # depends_on:
-    #   - server
+    depends_on:
+      - server
     command: python3 -u ./image-client.py
 
   label-client:
     build: label-client/
     network_mode: host
-    # depends_on:
-    #   - server
+    depends_on:
+      - server
     command: python3 -u ./label-client.py
