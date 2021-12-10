@@ -1,0 +1,267 @@
+DEBUG:asyncio:Using proactor: IocpProactor
+INFO:websockets.server:server listening on 0.0.0.0:8000
+INFO:websockets.server:server listening on [::]:8000
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: /nABKlK8CAxq7LnxbuqwaA==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: t+B6bAA19AUqytmL73aKBp/nsmU=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Fri, 10 Dec 2021 15:38:13 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: m1d+O9D2yP+SvJL5pq25tA==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: j2Ygfi9Y+/TcD6jPhE3fKy1z02s=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Fri, 10 Dec 2021 15:38:19 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'label_connect' [13 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: Vf/WkxuX41OnZ5bb4hq8rA==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: Jnx2nhBRV1SHxFTMN2+nHpVYz6s=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Fri, 10 Dec 2021 15:38:19 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'image_connect' [13 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'get ids' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'get_ids' [7 bytes]
+DEBUG:websockets.server:> TEXT 'get_ids' [7 bytes]
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'ids' [3 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:IDs -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'ids' [3 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:IDs -> Receive
+NoneType: None
+DEBUG:websockets.server:< BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4d cf ... 4d a6 c0 4d 12 a6 65 2e [162660 bytes]
+INFO:root:IDs -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4d 46 ... 4d 4a 95 4d 90 88 65 2e [170684 bytes]
+INFO:root:IDs -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'permute' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'common_ids' [10 bytes]
+DEBUG:websockets.server:> TEXT 'common_ids' [10 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4b 00 ... 4d 5d ea 4d 5e ea 65 2e [154414 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4b 00 ... 4d 5d ea 4d 5e ea 65 2e [154414 bytes]
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'train' [5 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'zero_grads' [10 bytes]
+DEBUG:websockets.server:> TEXT 'zero_grads' [10 bytes]
+DEBUG:websockets.server:> TEXT 'forward' [7 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 c5 00 00 00 00 00 00 00 5d 94 28 4d 9b ... 4d 87 5d 4d 43 6d 65 2e [208 bytes]
+INFO:root:Forward -> Receive
+NoneType: None
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\server.py", line 231, in handler
+    await self.ws_handler(self)
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\server.py", line 1134, in _ws_handler
+    return await cast(
+  File "server.py", line 28, in handler
+    await self.controller_endpoints(websocket, data)
+  File "server.py", line 69, in controller_endpoints
+    await self.train()
+  File "server.py", line 104, in train
+    outputs = await self.splitNN.forward(batch)
+  File "C:\Users\Jobb\repos\skole\project\vfl\server\splitNN.py", line 13, in forward
+    image_client_output = await self.image_client.forward(input_ids)
+  File "C:\Users\Jobb\repos\skole\project\vfl\server\client_connection.py", line 13, in forward
+    output = await self.websocket.recv()
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\protocol.py", line 516, in recv
+    raise RuntimeError(
+RuntimeError: cannot call recv while another coroutine is already waiting for the next message
+DEBUG:websockets.server:! failing connection with code 1011
+DEBUG:websockets.server:= connection is CLOSING
+DEBUG:websockets.server:> CLOSE 1011 (unexpected error) [2 bytes]
+INFO:websockets.server:connection closed
+DEBUG:websockets.server:x closing TCP connection
+DEBUG:websockets.server:= connection is CLOSED
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 97 7a ac 8c [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING ca 2a 70 45 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 3c b1 4f ce [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING a2 a6 e1 49 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 0d 71 66 8a [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING e0 14 85 2e [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 9d 4d c8 0b [binary, 4 bytes]
+DEBUG:websockets.server:< PONG ca 2a 70 45 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 3c b1 4f ce [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 0d 71 66 8a [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 9d 4d c8 0b [binary, 4 bytes]
+DEBUG:websockets.server:= connection is CLOSED
+DEBUG:websockets.server:! failing connection with code 1006
+INFO:websockets.server:connection closed
+DEBUG:websockets.server:< PONG 97 7a ac 8c [binary, 4 bytes]
+DEBUG:websockets.server:< PONG a2 a6 e1 49 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG e0 14 85 2e [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING c1 d5 d7 5f [binary, 4 bytes]
+DEBUG:websockets.server:< PONG c1 d5 d7 5f [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 's\x1f\x05*' [text, 4 bytes]
+DEBUG:websockets.server:< PONG 's\x1f\x05*' [text, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 53 be 59 ac [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 53 be 59 ac [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 'dj[\x19' [text, 4 bytes]
+DEBUG:websockets.server:< PONG 'dj[\x19' [text, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 90 98 15 80 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 90 98 15 80 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING f0 c6 f9 0c [binary, 4 bytes]
+DEBUG:websockets.server:< PONG f0 c6 f9 0c [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 56 c5 67 0f [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 56 c5 67 0f [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING ae f7 ac 4e [binary, 4 bytes]
+DEBUG:websockets.server:< PONG ae f7 ac 4e [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING ab fe 81 df [binary, 4 bytes]
+DEBUG:websockets.server:< PONG ab fe 81 df [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 62 a7 c5 bd [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 62 a7 c5 bd [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 02 16 97 27 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 02 16 97 27 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 75 20 df 2f [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 75 20 df 2f [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING bd 7b 7b a2 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG bd 7b 7b a2 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING cd be 83 34 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG cd be 83 34 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 65 fe 6e 89 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 65 fe 6e 89 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING cf d8 3a 74 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG cf d8 3a 74 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 7f 71 e5 53 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 7f 71 e5 53 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 38 8a 5b a0 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 38 8a 5b a0 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 3e ff 35 f7 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 3e ff 35 f7 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING af d2 35 a3 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG af d2 35 a3 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING db ef e3 61 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG db ef e3 61 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 5f a7 2e 64 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 5f a7 2e 64 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 54 8c f7 19 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 54 8c f7 19 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING bd 96 b0 20 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG bd 96 b0 20 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 66 fe 0f 82 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 66 fe 0f 82 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING d2 11 de 17 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG d2 11 de 17 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 56 26 ff b8 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 56 26 ff b8 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING ea be e4 09 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG ea be e4 09 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 97 d5 64 c7 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 97 d5 64 c7 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 46 66 b9 a6 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 46 66 b9 a6 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 11 f0 5d 2c [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 11 f0 5d 2c [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING f6 cf 18 8d [binary, 4 bytes]
+DEBUG:websockets.server:< PONG f6 cf 18 8d [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 11 f0 a6 43 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 11 f0 a6 43 [binary, 4 bytes]
