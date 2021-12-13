@@ -1,5 +1,6 @@
 import random
 from flask import Flask, request
+import numpy as np
 from client_connection import ClientConnection, LabelClientConnection
 
 from splitNN import SplitNN
@@ -57,9 +58,10 @@ def find_id_permutation():
 def image_connect():
     global image_client
 
+    client_ip = request.access_route[-1]
     port = request.args.get('port')
-    image_client = ClientConnection(port)
-    print('Image client connected')
+    image_client = ClientConnection(port, client_ip)
+    print(f'Image client connected on {client_ip}:{port}')
     return 'Connected'
 
 
@@ -67,9 +69,10 @@ def image_connect():
 def label_connect():
     global label_client
 
+    client_ip = request.access_route[-1]
     port = request.args.get('port')
-    label_client = LabelClientConnection(port)
-    print('Label client connected')
+    label_client = LabelClientConnection(port, client_ip)
+    print(f'Label client connected on {client_ip}:{port}')
     return 'Connected'
 
 
@@ -88,21 +91,25 @@ def train():
         return 'SplitNN not initialized'
 
     print('Training')
-    current_ids = random.sample(ids, len(
-        ids))  # Random order
-    epoch_loss = 0
-    chunk_size = 64
-    current_chunks = chunks(current_ids, chunk_size)
-    for batch in current_chunks:
-        print(batch)
-        splitNN.zero_grads()
-        output, loss = splitNN.forward(batch)
-        loss.backward()
-        epoch_loss += (loss.item() / (len(current_ids) / chunk_size))
-        splitNN.backward()
-        splitNN.step()
+    for epoch in range(1, 11):
+        current_ids = random.sample(ids, len(
+            ids) // 2)  # Random order
+        epoch_loss = 0
+        chunk_size = 64
+        current_chunks = chunks(current_ids, chunk_size)
+        epoch_accuracy = []
+        for batch in current_chunks:
+            splitNN.zero_grads()
+            output, loss, accuracy = splitNN.forward(batch)
+            epoch_accuracy.append(accuracy)
+            loss.backward()
+            epoch_loss += (loss.item() / (len(current_ids) / chunk_size))
+            splitNN.backward()
+            splitNN.step()
+        print(f'Epoch {epoch}: {epoch_loss} - {np.mean(epoch_accuracy)}')
+    return 'Done training!'
 
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(port=8000)
+    app.run(host='0.0.0.0', port=8000)

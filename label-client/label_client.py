@@ -46,7 +46,12 @@ def loss(outputs, batch):
             raise Exception('Label not found')
         labs.append(label)
     labs = torch.stack(labs)
-    return criterion(outputs, labs)
+    return criterion(outputs, labs), accuracy(labs, outputs)
+
+
+def accuracy(label, output):
+    pred = output.argmax(dim=1, keepdim=True)
+    return pred.eq(label.view_as(pred)).sum().item() / pred.shape[0]
 
 
 @app.post('/forward')
@@ -56,8 +61,8 @@ def forward():
     image_client_output, batch = pickle.loads(
         data['image_client_output']), data['batch']
     output = model.forward(image_client_output)
-    current_loss = loss(output, batch)
-    return pickle.dumps((output, current_loss))
+    current_loss, current_accuracy = loss(output, batch)
+    return pickle.dumps((output, current_loss, current_accuracy))
 
 
 @app.post('/backward')
@@ -82,4 +87,4 @@ def step():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(port=PORT)
+    app.run(host='0.0.0.0', port=PORT)

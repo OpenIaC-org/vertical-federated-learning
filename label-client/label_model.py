@@ -25,6 +25,9 @@ class LabelModel(nn.Module):
     def eval(self):
         self.model.eval()
 
+    def step(self):
+        self.optimizer.step()
+
 
 class LabelNet(nn.Module):
     def __init__(self):

@@ -1,5 +1,6 @@
 import random
 import requests
+import time
 
 
 def preprocess(data):
@@ -19,8 +20,9 @@ def preprocess(data):
 
 
 def connect_to_server(server_port, port):
+    time.sleep(5)
     requests.get(
-        f'http://localhost:{server_port}/connect-label-client?port={port}')
+        f'http://127.0.0.1:{server_port}/connect-label-client?port={port}')
 
 
 def reorder_labels(ids, labels):

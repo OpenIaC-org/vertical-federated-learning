@@ -1,6 +1,7 @@
 import random
 import matplotlib.pyplot as plt
 import requests
+import time
 
 
 def preprocess(data):
@@ -35,8 +36,9 @@ def show_images(images):
 
 
 def connect_to_server(server_port, port):
+    time.sleep(5)
     requests.get(
-        f'http://localhost:{server_port}/connect-image-client?port={port}')
+        f'http://127.0.0.1:{server_port}/connect-image-client?port={port}')
 
 
 def reorder_images(ids, images):

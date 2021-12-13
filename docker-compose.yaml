@@ -2,6 +2,8 @@ version: "3"
 
 services:
   server:
+    environment:
+      - PYTHONUNBUFFERED=1
     build: server/
     ports:
       - 8000:8000

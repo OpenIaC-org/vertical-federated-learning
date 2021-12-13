@@ -1,5 +1,4 @@
 import pickle
-from torch.functional import Tensor
 from torchvision import transforms
 from torchvision.datasets import MNIST
 from image_model import ImageModel
@@ -78,4 +77,4 @@ def step():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(port=PORT)
+    app.run(host='0.0.0.0', port=PORT)
