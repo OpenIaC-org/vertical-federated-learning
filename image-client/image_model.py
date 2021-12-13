@@ -2,12 +2,14 @@ from torch import nn, optim
 import torch.nn.functional as F
 
 
-class ImageClient(nn.Module):
+class ImageModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.model = ImageNet()
         self.output = None
         self.grad_from_label = None
+        self.optimizer = optim.SGD(
+            self.model.parameters(), lr=0.01, momentum=0.9)
 
     def forward(self, inputs):
         self.output = self.model(inputs)
@@ -23,9 +25,6 @@ class ImageClient(nn.Module):
 
     def eval(self):
         self.model.eval()
-
-    def get_optimizer(self):
-        return optim.SGD(self.model.parameters(), lr=0.01, momentum=0.9)
 
 
 class ImageNet(nn.Module):

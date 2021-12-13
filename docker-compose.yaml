@@ -12,11 +12,11 @@ services:
     network_mode: host
     depends_on:
       - server
-    command: python3 -u ./image-client.py
+    command: python3 -u ./image_client.py
 
   label-client:
     build: label-client/
     network_mode: host
     depends_on:
       - server
-    command: python3 -u ./label-client.py
+    command: python3 -u ./label_client.py
