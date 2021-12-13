@@ -21,8 +21,11 @@ def preprocess(data):
 
 
 def show_image(image, multiple=False):
-    plt.title(f'id: {image[1]}')
-    plt.imshow(image[0].numpy().squeeze())
+    if len(image) == 2:
+        plt.title(f'id: {image[1]}')
+        plt.imshow(image[0].numpy().squeeze())
+    else:
+        plt.imshow(image.numpy().squeeze())
     if not multiple:
         plt.show()
 
@@ -36,7 +39,6 @@ def show_images(images):
 
 
 def connect_to_server(server_port, port):
-    time.sleep(5)
     requests.get(
         f'http://127.0.0.1:{server_port}/connect-image-client?port={port}')
 

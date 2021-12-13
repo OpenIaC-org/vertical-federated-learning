@@ -33,7 +33,6 @@ def post_ids():
 
     common_ids = request.json
     images = reorder_images(common_ids, images)
-    print(common_ids[:10])
     return 'Reordered images'
 
 

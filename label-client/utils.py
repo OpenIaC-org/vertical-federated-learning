@@ -20,7 +20,6 @@ def preprocess(data):
 
 
 def connect_to_server(server_port, port):
-    time.sleep(5)
     requests.get(
         f'http://127.0.0.1:{server_port}/connect-label-client?port={port}')
 
