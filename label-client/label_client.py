@@ -1,11 +1,11 @@
 import pickle
-from flask.json import jsonify
 from torch import nn
-import torch
+from torch.nn.functional import batch_norm
+from torch.utils.data import DataLoader
 from torchvision.datasets import MNIST
-from torchvision.transforms import ToTensor
+from torchvision.transforms import ToTensor, Normalize, Compose
 from label_model import LabelModel
-from flask import Flask, request, jsonify
+from flask import Flask, request
 
 from utils import *
 
@@ -13,40 +13,22 @@ app = Flask(__name__)
 
 PORT = 5001
 SERVER_PORT = 8000
+BATCH_SIZE = 128
 
-labels = preprocess(MNIST('./data', download=True, transform=ToTensor()))
+transform = Compose([ToTensor(),
+                     Normalize((0.5,), (0.5,)),
+                     ])
+
+
 connect_to_server(SERVER_PORT, PORT)
 model = LabelModel()
 criterion = nn.CrossEntropyLoss()
 
-
-@app.get('/ids')
-def get_ids():
-    return jsonify([img[1] for img in labels])
-
-
-@app.post('/ids')
-def post_ids():
-    global labels
-    print('Reordering labels')
-
-    common_ids = request.json
-    labels = reorder_labels(common_ids, labels)
-    print(common_ids[:10])
-    return 'Reordered labels'
-
-
-def loss(outputs, batch):
-    global model, labels, criterion
-    labs = []
-    for id in batch:
-        label = next(
-            (lab[0] for lab in labels if lab[1] == id), None)
-        if label is None:
-            raise Exception('Label not found')
-        labs.append(label)
-    labs = torch.stack(labs)
-    return criterion(outputs, labs), accuracy(labs, outputs)
+trainset = MNIST('./data', download=True, transform=transform)
+trainloader = DataLoader(trainset, batch_size=BATCH_SIZE)
+loader_iterator = iter(trainloader)
+max_batch_count = len(trainset) // BATCH_SIZE
+batch_counter = 0
 
 
 def accuracy(label, output):
@@ -56,13 +38,17 @@ def accuracy(label, output):
 
 @app.post('/forward')
 def forward():
-    global model, loss
-    data = pickle.loads(request.data)
-    image_client_output, batch = pickle.loads(
-        data['image_client_output']), data['batch']
+    global model, loss, batch_counter, loader_iterator
+    if max_batch_count == batch_counter:
+        loader_iterator = iter(trainloader)
+        batch_counter = 0
+    image_client_output = pickle.loads(request.data)
+    _, labels = next(loader_iterator)
     output = model.forward(image_client_output)
-    current_loss, current_accuracy = loss(output, batch)
+    current_loss = criterion(output, labels)
     current_loss.backward()
+    current_accuracy = accuracy(labels, output)
+    batch_counter += 1
     return pickle.dumps((output, current_loss, current_accuracy))
 
 

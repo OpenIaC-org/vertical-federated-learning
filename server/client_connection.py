@@ -7,13 +7,6 @@ class ClientConnection():
         self.host = host
         self.port = port
 
-    def get_ids(self):
-        return requests.get(f'http://{self.host}:{self.port}/ids').json()
-
-    def send_ids(self, common_ids):
-        print('Sending ids to clients')
-        return requests.post(f'http://{self.host}:{self.port}/ids', json=common_ids)
-
     def zero_grads(self):
         requests.get(f'http://{self.host}:{self.port}/zero_grads')
 
@@ -25,8 +18,8 @@ class ImageClientConnection(ClientConnection):
     def __init__(self, port, host):
         super().__init__(port, host)
 
-    def forward(self, input):
-        return requests.post(f'http://{self.host}:{self.port}/forward', json=input).content
+    def forward(self):
+        return requests.post(f'http://{self.host}:{self.port}/forward').content
 
     def backward(self, gradient):
         gradient = pickle.dumps(gradient)
@@ -41,12 +34,10 @@ class LabelClientConnection(ClientConnection):
     def loss(self, outputs, ids):
         return requests.post(f'http://{self.host}:{self.port}/loss', json={'outputs': outputs, 'ids': ids}).json()
 
-    def forward(self, image_output, batch):
-        params = {'image_client_output': image_output, 'batch': batch}
+    def forward(self, image_output):
         data = requests.post(
-            f'http://{self.host}:{self.port}/forward', data=pickle.dumps(params)).content
-        data = pickle.loads(data)
-        return data
+            f'http://{self.host}:{self.port}/forward', data=image_output).content
+        return pickle.loads(data)
 
     def backward(self):
         grad = requests.post(

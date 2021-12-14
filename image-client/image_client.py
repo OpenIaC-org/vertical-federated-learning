@@ -1,9 +1,9 @@
 import pickle
+from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.datasets import MNIST
 from image_model import ImageModel
-from flask import Flask, request, jsonify
-import torch
+from flask import Flask, request
 
 from utils import *
 
@@ -11,46 +11,30 @@ app = Flask(__name__)
 
 PORT = 5000
 SERVER_PORT = 8000
+BATCH_SIZE = 128
 
 transform = transforms.Compose([transforms.ToTensor(),
                                 transforms.Normalize((0.5,), (0.5,)),
                                 ])
 
-images = preprocess(MNIST('./data', download=True, transform=transform))
+trainset = MNIST('./data', download=True, transform=transform)
+trainloader = DataLoader(trainset, batch_size=128)
+loader_iterator = iter(trainloader)
 model = ImageModel()
 connect_to_server(SERVER_PORT, PORT)
-
-
-@app.get('/ids')
-def get_ids():
-    return jsonify([img[1] for img in images])
-
-
-@app.post('/ids')
-def post_ids():
-    global images
-    print('Reordering images')
-
-    common_ids = request.json
-    images = reorder_images(common_ids, images)
-    return 'Reordered images'
+max_batch_count = len(trainset) // BATCH_SIZE
+batch_counter = 0
 
 
 @app.post('/forward')
 def forward():
-    global model, images
-    ids = request.json
-    img = []
-    for id in ids:
-        image = next(
-            (img[0] for img in images if img[1] == id), None)
-        if image is None:
-            raise Exception('Image not found')
-        img.append(image)
-    img = torch.stack(img)
-    img = img.float()
-
-    return pickle.dumps(model.forward(img))
+    global model, batch_counter, loader_iterator
+    if max_batch_count == batch_counter:
+        loader_iterator = iter(trainloader)
+        batch_counter = 0
+    images, _ = next(loader_iterator)
+    batch_counter += 1
+    return pickle.dumps(model.forward(images))
 
 
 @app.post('/backward')

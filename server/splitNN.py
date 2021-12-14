@@ -1,7 +1,5 @@
 import torch
 
-from client_connection import ClientConnection
-
 
 class SplitNN(torch.nn.Module):
     def __init__(self, image_client, label_client):
@@ -9,9 +7,9 @@ class SplitNN(torch.nn.Module):
         self.image_client = image_client
         self.label_client = label_client
 
-    def forward(self, input_ids):
-        image_client_output = self.image_client.forward(input_ids)
-        return self.label_client.forward(image_client_output, input_ids)
+    def forward(self):
+        image_client_output = self.image_client.forward()
+        return self.label_client.forward(image_client_output)
 
     def backward(self):
         grad_to_image_client = self.label_client.backward()
@@ -24,6 +22,3 @@ class SplitNN(torch.nn.Module):
     def step(self):
         self.image_client.step()
         self.label_client.step()
-
-    def loss(self, outputs, batch):
-        return self.label_client.loss(outputs, batch)
