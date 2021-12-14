@@ -1,7 +1,7 @@
 import random
 from flask import Flask, request
 import numpy as np
-from client_connection import ClientConnection, LabelClientConnection
+from client_connection import ImageClientConnection, LabelClientConnection
 
 from splitNN import SplitNN
 from utils import *
@@ -60,7 +60,7 @@ def image_connect():
 
     client_ip = request.access_route[-1]
     port = request.args.get('port')
-    image_client = ClientConnection(port, client_ip)
+    image_client = ImageClientConnection(port, client_ip)
     print(f'Image client connected on {client_ip}:{port}')
     return 'Connected'
 
@@ -102,7 +102,7 @@ def train():
             splitNN.zero_grads()
             output, loss, accuracy = splitNN.forward(batch)
             epoch_accuracy.append(accuracy)
-            loss.backward()
+            # loss.backward()
             epoch_loss += (loss.item() / (len(current_ids) / chunk_size))
             splitNN.backward()
             splitNN.step()

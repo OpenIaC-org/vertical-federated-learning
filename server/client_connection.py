@@ -14,17 +14,24 @@ class ClientConnection():
         print('Sending ids to clients')
         return requests.post(f'http://{self.host}:{self.port}/ids', json=common_ids)
 
-    def forward(self, input):
-        return requests.post(f'http://{self.host}:{self.port}/forward', json=input).content
-
-    def backward(self, gradient=None):
-        return requests.post(f'http://{self.host}:{self.port}/backward', data=gradient).content
-
     def zero_grads(self):
         requests.get(f'http://{self.host}:{self.port}/zero_grads')
 
     def step(self):
         requests.get(f'http://{self.host}:{self.port}/step')
+
+
+class ImageClientConnection(ClientConnection):
+    def __init__(self, port, host):
+        super().__init__(port, host)
+
+    def forward(self, input):
+        return requests.post(f'http://{self.host}:{self.port}/forward', json=input).content
+
+    def backward(self, gradient):
+        gradient = pickle.dumps(gradient)
+        requests.post(
+            f'http://{self.host}:{self.port}/backward', data=gradient)
 
 
 class LabelClientConnection(ClientConnection):
@@ -40,3 +47,8 @@ class LabelClientConnection(ClientConnection):
             f'http://{self.host}:{self.port}/forward', data=pickle.dumps(params)).content
         data = pickle.loads(data)
         return data
+
+    def backward(self):
+        grad = requests.post(
+            f'http://{self.host}:{self.port}/backward').content
+        return pickle.loads(grad)

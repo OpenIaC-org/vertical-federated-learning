@@ -56,8 +56,9 @@ def forward():
 @app.post('/backward')
 def backward():
     global model
-    gradient = request.json
-    return pickle.dumps(model.backward(gradient))
+    gradient = pickle.loads(request.data)
+    model.backward(gradient)
+    return 'Hopefully I learned something!'
 
 
 @app.get('/zero_grads')

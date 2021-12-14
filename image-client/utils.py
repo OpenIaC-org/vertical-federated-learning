@@ -14,9 +14,9 @@ def preprocess(data):
     print('Preprocessing images')
     data = data.data[:5000]
     data = [(x, i) for i, x in enumerate(data)]
-    random.shuffle(data)
-    for _ in range(random.randint(len(data) * 0.05, len(data) * 0.1)):
-        data.pop()
+    # random.shuffle(data)
+    # for _ in range(random.randint(len(data) * 0.05, len(data) * 0.1)):
+    #     data.pop()
     return data
 
 

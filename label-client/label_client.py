@@ -62,13 +62,14 @@ def forward():
         data['image_client_output']), data['batch']
     output = model.forward(image_client_output)
     current_loss, current_accuracy = loss(output, batch)
+    current_loss.backward()
     return pickle.dumps((output, current_loss, current_accuracy))
 
 
 @app.post('/backward')
 def backward():
     global model
-    return model.backward()
+    return pickle.dumps(model.backward())
 
 
 @app.get('/zero_grads')

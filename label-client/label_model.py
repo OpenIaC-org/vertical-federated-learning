@@ -28,6 +28,9 @@ class LabelModel(nn.Module):
     def step(self):
         self.optimizer.step()
 
+    def zero_grad(self):
+        self.optimizer.zero_grad()
+
 
 class LabelNet(nn.Module):
     def __init__(self):

@@ -18,7 +18,7 @@ class ImageModel(nn.Module):
 
     def backward(self, grad_from_label):
         self.grad_from_label = grad_from_label
-        self.output.sum().backward(grad_from_label)
+        self.output.backward(grad_from_label)
 
     def train(self):
         self.model.train()
@@ -28,6 +28,9 @@ class ImageModel(nn.Module):
 
     def step(self):
         self.optimizer.step()
+
+    def zero_grad(self):
+        self.optimizer.zero_grad()
 
 
 class ImageNet(nn.Module):
