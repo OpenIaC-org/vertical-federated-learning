@@ -1,13 +1,19 @@
 import pickle
+from flask.helpers import send_file
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torchvision.datasets import MNIST
 from image_model import ImageModel
 from flask import Flask, request
+from flask_cors import CORS, cross_origin
 
 from utils import *
+import logging
 
 app = Flask(__name__)
+cors = CORS(app)
+log = logging.getLogger('werkzeug')
+log.disabled = True
 
 PORT = 5000
 SERVER_PORT = 8000
@@ -57,6 +63,12 @@ def step():
     global model
     model.step()
     return 'Stepped'
+
+
+@cross_origin()
+@app.get('/metadata')
+def metadata():
+    return send_file('metadata.json')
 
 
 if __name__ == '__main__':

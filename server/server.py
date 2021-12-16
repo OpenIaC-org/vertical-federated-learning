@@ -1,13 +1,16 @@
-from flask import Flask, request
+from flask import Flask, request, send_file
+from flask_cors import CORS, cross_origin
 import numpy as np
 from client_connection import ImageClientConnection, LabelClientConnection
 
 from splitNN import SplitNN
 from utils import *
+import time
 
 app = Flask(__name__)
+cors = CORS(app)
 
-NUMBER_OF_IMAGES = 30000
+NUMBER_OF_IMAGES = 13500
 BATCH_SIZE = 128
 
 
@@ -52,6 +55,7 @@ def train():
         initialize_splitNN()
 
     print('Training')
+    start = time.time()
     for epoch in range(1, 11):
         batches = NUMBER_OF_IMAGES // BATCH_SIZE
         epoch_loss = 0
@@ -64,7 +68,14 @@ def train():
             splitNN.backward()
             splitNN.step()
         print(f'Epoch {epoch}: {epoch_loss} - {np.mean(epoch_accuracy)}')
+    print(f'Training time: {time.time() - start}')
     return 'Done training!'
+
+
+@cross_origin()
+@app.get('/metadata')
+def metadata():
+    return send_file('metadata.json')
 
 
 if __name__ == '__main__':
