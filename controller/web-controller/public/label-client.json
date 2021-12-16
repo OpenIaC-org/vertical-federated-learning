@@ -1,0 +1,9 @@
+{
+  "type": "client",
+  "name": "Label Client",
+  "data": {
+    "type": "label",
+    "size": 28881,
+    "count": 60000
+  }
+}

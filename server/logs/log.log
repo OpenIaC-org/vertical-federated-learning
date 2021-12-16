@@ -265,3 +265,972 @@ DEBUG:websockets.server:< PONG f6 cf 18 8d [binary, 4 bytes]
 DEBUG:websockets.server:% sending keepalive ping
 DEBUG:websockets.server:> PING 11 f0 a6 43 [binary, 4 bytes]
 DEBUG:websockets.server:< PONG 11 f0 a6 43 [binary, 4 bytes]
+DEBUG:asyncio:Using proactor: IocpProactor
+INFO:websockets.server:server listening on 0.0.0.0:8000
+INFO:websockets.server:server listening on [::]:8000
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: BI30M1EDtyM6F7bhu5DWFw==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: tjOqdSpmoxyIHDDjBLKlzY1hBPk=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Mon, 13 Dec 2021 08:51:11 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'image_connect' [13 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 73 ec 09 a3 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 73 ec 09 a3 [binary, 4 bytes]
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: 8u7EOFmqhYvZGDAkzMCVlA==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: gVRq4O/7e8lBIZkjGHdt7fC1w9k=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Mon, 13 Dec 2021 08:51:39 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'label_connect' [13 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: 8S2dnHDpTVgqBEyP8bz7dQ==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: cRGXBCWyQcM6GEQ27POH3nxsfoI=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Mon, 13 Dec 2021 08:51:44 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'get ids' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'get_ids' [7 bytes]
+DEBUG:websockets.server:> TEXT 'get_ids' [7 bytes]
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'ids' [3 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:IDs -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'ids' [3 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:IDs -> Receive
+NoneType: None
+DEBUG:websockets.server:< BINARY 80 04 95 01 00 01 00 00 00 00 00 5d 94 28 4d f0 ... 4d 59 57 4d f6 55 65 2e [167095 bytes]
+INFO:root:IDs -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4d 1d ... 4d 99 d0 4d 5d 19 65 2e [163403 bytes]
+INFO:root:IDs -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'permute' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'common_ids' [10 bytes]
+DEBUG:websockets.server:> TEXT 'common_ids' [10 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4b 00 ... 4d 5e ea 4d 5f ea 65 2e [151790 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4b 00 ... 4d 5e ea 4d 5f ea 65 2e [151790 bytes]
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'train' [5 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'zero_grads' [10 bytes]
+DEBUG:websockets.server:> TEXT 'zero_grads' [10 bytes]
+DEBUG:websockets.server:> TEXT 'forward' [7 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 c5 00 00 00 00 00 00 00 5d 94 28 4d 38 ... 4d e1 1b 4d 81 7d 65 2e [208 bytes]
+INFO:root:Forward -> Receive
+NoneType: None
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\server.py", line 231, in handler
+    await self.ws_handler(self)
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\server.py", line 1134, in _ws_handler
+    return await cast(
+  File "server.py", line 28, in handler
+    await self.controller_endpoints(websocket, data)
+  File "server.py", line 69, in controller_endpoints
+    await self.train()
+  File "server.py", line 104, in train
+    outputs = await self.splitNN.forward(batch)
+  File "C:\Users\Jobb\repos\skole\project\vfl\server\splitNN.py", line 13, in forward
+    image_client_output = await self.image_client.forward(input_ids)
+  File "C:\Users\Jobb\repos\skole\project\vfl\server\client_connection.py", line 13, in forward
+    output = await self.websocket.recv()
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\protocol.py", line 516, in recv
+    raise RuntimeError(
+RuntimeError: cannot call recv while another coroutine is already waiting for the next message
+DEBUG:websockets.server:! failing connection with code 1011
+DEBUG:websockets.server:= connection is CLOSING
+DEBUG:websockets.server:> CLOSE 1011 (unexpected error) [2 bytes]
+INFO:websockets.server:connection closed
+DEBUG:websockets.server:x closing TCP connection
+DEBUG:websockets.server:= connection is CLOSED
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING f7 f3 88 39 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING c9 e4 31 56 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 34 a9 b8 6f [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 0a a8 79 f6 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 0a d8 e8 00 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 1a b2 9c f3 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING f8 3e ad a5 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING eb 8d 7a 21 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING db 13 e0 44 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG f7 f3 88 39 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 34 a9 b8 6f [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 0a d8 e8 00 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG f8 3e ad a5 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG db 13 e0 44 [binary, 4 bytes]
+DEBUG:websockets.server:= connection is CLOSED
+DEBUG:websockets.server:! failing connection with code 1006
+INFO:websockets.server:connection closed
+DEBUG:websockets.server:< PONG c9 e4 31 56 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 0a a8 79 f6 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 1a b2 9c f3 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG eb 8d 7a 21 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING d6 aa 5f ac [binary, 4 bytes]
+DEBUG:websockets.server:< PONG d6 aa 5f ac [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 5e f9 af 06 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 5e f9 af 06 [binary, 4 bytes]
+DEBUG:asyncio:Using proactor: IocpProactor
+INFO:websockets.server:server listening on 0.0.0.0:8000
+INFO:websockets.server:server listening on [::]:8000
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: CAoj2LIp/YUkLP09MUHoZQ==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: Xb1CtYgyp0Rgbrmz4m8Ce/hwGlA=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Mon, 13 Dec 2021 08:53:55 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: 0PleoO4lTol3tbt61im/Wg==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: ahhOqR0kzDWKssE4GUTw7GlGCFY=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Mon, 13 Dec 2021 08:53:55 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'image_connect' [13 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'get ids' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:= connection is CONNECTING
+DEBUG:websockets.server:< GET / HTTP/1.1
+DEBUG:websockets.server:< Host: localhost:8000
+DEBUG:websockets.server:< Upgrade: websocket
+DEBUG:websockets.server:< Connection: Upgrade
+DEBUG:websockets.server:< Sec-WebSocket-Key: Y+t5bVX8Ezr7SaiRbV5pcQ==
+DEBUG:websockets.server:< Sec-WebSocket-Version: 13
+DEBUG:websockets.server:< Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+DEBUG:websockets.server:< User-Agent: Python/3.8 websockets/10.1
+DEBUG:websockets.server:> HTTP/1.1 101 Switching Protocols
+DEBUG:websockets.server:> Upgrade: websocket
+DEBUG:websockets.server:> Connection: Upgrade
+DEBUG:websockets.server:> Sec-WebSocket-Accept: UUOJS9wC0pngEcat2gxxc5nCpbc=
+DEBUG:websockets.server:> Sec-WebSocket-Extensions: permessage-deflate; server_max_window_bits=12; client_max_window_bits=12
+DEBUG:websockets.server:> Date: Mon, 13 Dec 2021 08:53:58 GMT
+DEBUG:websockets.server:> Server: Python/3.8 websockets/10.1
+INFO:websockets.server:connection open
+DEBUG:websockets.server:= connection is OPEN
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'label_connect' [13 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'get ids' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'get_ids' [7 bytes]
+DEBUG:websockets.server:> TEXT 'get_ids' [7 bytes]
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'ids' [3 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:IDs -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'ids' [3 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+INFO:root:IDs -> Receive
+NoneType: None
+DEBUG:websockets.server:< BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4d 84 ... 4d 6f 6f 4d da 7c 65 2e [168538 bytes]
+INFO:root:IDs -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< BINARY 80 04 95 02 00 01 00 00 00 00 00 5d 94 28 4d 5d ... 4d df a0 4d 32 75 65 2e [166919 bytes]
+INFO:root:IDs -> Return
+NoneType: None
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'permute' [7 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'common_ids' [10 bytes]
+DEBUG:websockets.server:> TEXT 'common_ids' [10 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 00 00 01 00 00 00 00 00 5d 94 28 4b 00 ... 4d 5e ea 4d 5f ea 65 2e [156388 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 00 00 01 00 00 00 00 00 5d 94 28 4b 00 ... 4d 5e ea 4d 5f ea 65 2e [156388 bytes]
+INFO:root:Handler -> Receive
+NoneType: None
+DEBUG:websockets.server:< TEXT 'train' [5 bytes]
+INFO:root:Handler -> Return
+NoneType: None
+DEBUG:websockets.server:> TEXT 'zero_grads' [10 bytes]
+DEBUG:websockets.server:> TEXT 'zero_grads' [10 bytes]
+DEBUG:websockets.server:> TEXT 'forward' [7 bytes]
+DEBUG:websockets.server:> BINARY 80 04 95 c3 00 00 00 00 00 00 00 5d 94 28 4d 22 ... 9f 4b 02 4d 9d d0 65 2e [206 bytes]
+INFO:root:Forward -> Receive
+NoneType: None
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\server.py", line 231, in handler
+    await self.ws_handler(self)
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\server.py", line 1134, in _ws_handler
+    return await cast(
+  File "server.py", line 28, in handler
+    await self.controller_endpoints(websocket, data)
+  File "server.py", line 69, in controller_endpoints
+    await self.train()
+  File "server.py", line 104, in train
+    outputs = await self.splitNN.forward(batch)
+  File "C:\Users\Jobb\repos\skole\project\vfl\server\splitNN.py", line 13, in forward
+    image_client_output = await self.image_client.forward(input_ids)
+  File "C:\Users\Jobb\repos\skole\project\vfl\server\client_connection.py", line 13, in forward
+    output = await self.websocket.recv()
+  File "C:\Users\Jobb\anaconda3\envs\vfl\lib\site-packages\websockets\legacy\protocol.py", line 516, in recv
+    raise RuntimeError(
+RuntimeError: cannot call recv while another coroutine is already waiting for the next message
+DEBUG:websockets.server:! failing connection with code 1011
+DEBUG:websockets.server:= connection is CLOSING
+DEBUG:websockets.server:> CLOSE 1011 (unexpected error) [2 bytes]
+INFO:websockets.server:connection closed
+DEBUG:websockets.server:x closing TCP connection
+DEBUG:websockets.server:= connection is CLOSED
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 18 56 90 7d [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING ea c0 ac 79 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING ab 63 74 fc [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING da 23 05 a4 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 30 8d 53 06 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 77 dd 0b 2b [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 06 68 e3 d5 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 18 56 90 7d [binary, 4 bytes]
+DEBUG:websockets.server:< PONG ab 63 74 fc [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 77 dd 0b 2b [binary, 4 bytes]
+DEBUG:websockets.server:= connection is CLOSED
+DEBUG:websockets.server:! failing connection with code 1006
+INFO:websockets.server:connection closed
+DEBUG:websockets.server:< PONG ea c0 ac 79 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG da 23 05 a4 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 30 8d 53 06 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 06 68 e3 d5 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 16 a6 14 ac [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 16 a6 14 ac [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 8c b8 fd 87 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 8c b8 fd 87 [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 26 a1 fb ae [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 26 a1 fb ae [binary, 4 bytes]
+DEBUG:websockets.server:% sending keepalive ping
+DEBUG:websockets.server:> PING 09 5c aa 53 [binary, 4 bytes]
+DEBUG:websockets.server:< PONG 09 5c aa 53 [binary, 4 bytes]
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:27:14] "[35m[1mGET /connect-image-client?port=5000 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:27:16] "[35m[1mGET /connect-label-client?port=5001 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:27:23] "[35m[1mGET /connect-image-client?port=5000 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:27:24] "[35m[1mGET /connect-label-client?port=5001 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:27:52] "[35m[1mGET /connect-image-client?port=5000 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:27:53] "[35m[1mGET /connect-label-client?port=5001 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:28:01] "[35m[1mGET /connect-image-client?port=5000 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:28:01] "[35m[1mGET /connect-label-client?port=5001 HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:29:00] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:29:01] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:29:09] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\server.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:29:10] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\server.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:34:48] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:34:52] "[35m[1mGET /connect-image-client?port=5000 HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:34:56] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:35:01] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:41:51] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:41:51] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:41:59] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:42:01] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 500 None
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:42:12] "[35m[1mGET /start HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:43:28] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:44:31] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:44:55] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:45:25] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:45:25] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:45:33] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:45:34] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 543207
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 534796
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\client_connection.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:47:37] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:48:06] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:48:06] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:48:14] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:48:16] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 554142
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 552588
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 500 None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:50:52] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:50:54] "[35m[1mGET /start HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:51:02] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:52:24] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:52:25] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:52:32] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:52:34] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 540554
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 535042
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 500 None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 10:55:42] "[35m[1mGET /start HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 11:55:07] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 11:55:07] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 11:55:16] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 11:55:17] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 541507
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 558320
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 11:58:23] "[35m[1mGET /start HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\client_connection.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\client_connection.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\server.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:19:42] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:19:42] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:19:50] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:19:51] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 547348
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 556639
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:21:51] "[35m[1mGET /start HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:22:04] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\splitNN.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\server.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:26:22] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:26:23] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:26:30] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:26:32] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 548378
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 548295
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:28:24] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 500 None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 500 None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 None
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:28:39] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:29:26] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:29:26] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:29:34] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:29:36] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 547578
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 558575
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:32:16] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 None
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:32:32] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 12:42:14] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:02:49] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:04:34] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:04:35] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:04:42] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:04:44] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 556928
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 558653
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:07:19] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 None
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:07:36] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:09:29] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:09:37] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:09:51] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:11:28] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:11:37] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 553637
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 541695
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:13:43] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 None
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:15:46] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:16:45] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:17:26] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:17:39] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:17:48] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:17:57] "[35m[1mGET /format-ids HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:18:14] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:18:15] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:18:22] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:18:24] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 538025
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 538821
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:20:47] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 None
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:21:55] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:23:27] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:24:52] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:28:02] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:28:10] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:29:57] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 542111
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 542332
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:32:27] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:33:38] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:33:54] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:35:33] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:36:24] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:36:32] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:36:32] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:36:46] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 550684
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 545234
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:39:09] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:39:34] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:40:06] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:53:48] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:53:51] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:53:53] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:53:59] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:09] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:12] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:29] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:32] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:34] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:39] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 39777
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 39783
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:54:57] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:55:19] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:56:52] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:56:56] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:59:00] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:59:03] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:59:04] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:59:10] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 40469
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 39775
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:59:25] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 14:59:49] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:00:05] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:00:08] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:00:12] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:00:17] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 40835
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 41501
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:00:28] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:04:13] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:06:26] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:10:20] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:10:24] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:10:25] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:10:31] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 40721
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 40272
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:10:56] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:14:15] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:15:22] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:24:22] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:24:26] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:24:31] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:24:38] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 41165
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 40351
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:24:59] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:28:22] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:28:31] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:28:35] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:28:37] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:28:43] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 41442
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 40307
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:28:53] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:29:43] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:30:19] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:30:35] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:30:44] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:30:48] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:30:50] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:30:57] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 41509
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 40377
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:34:41] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:35:01] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:37:55] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:38:48] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:38:51] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 40148
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 41218
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 500 None
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 500 290
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:06] "GET /format-ids HTTP/1.1" 200 -
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:20] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:23] "GET /connect-label-client?port=5001 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:24] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:30] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /ids HTTP/1.1" 200 39762
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /ids HTTP/1.1" 200 41692
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "POST /ids HTTP/1.1" 200 16
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /ids HTTP/1.1" 200 16
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:40] "GET /format-ids HTTP/1.1" 200 -
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5001
+DEBUG:urllib3.connectionpool:http://localhost:5001 "GET /zero_grads HTTP/1.1" 200 12
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): localhost:5000
+DEBUG:urllib3.connectionpool:http://localhost:5000 "POST /forward HTTP/1.1" 200 51600
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:39:52] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Jobb\\repos\\skole\\project\\vfl\\server\\client_connection.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 120-117-111
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [13/Dec/2021 15:41:04] "GET /connect-image-client?port=5000 HTTP/1.1" 200 -

@@ -1,45 +1,45 @@
 import pickle
-import logging
+import requests
 
 
 class ClientConnection():
-    def __init__(self, websocket):
-        self.websocket = websocket
+    def __init__(self, port, host):
+        self.host = host
+        self.port = port
 
-    async def forward(self, inputs):
-        await self.websocket.send('forward')
-        await self.websocket.send(pickle.dumps(inputs))
-        logging.info("Forward -> Receive", exc_info=True)
-        output = await self.websocket.recv()
-        logging.info("Forward -> Return", exc_info=True)
-        return pickle.loads(output)
+    def zero_grads(self):
+        requests.get(f'http://{self.host}:{self.port}/zero_grads')
 
-    async def backward(self, gradient=None):
-        await self.websocket.send('backward')
-        if gradient is None:
-            logging.info("Backward -> Receive", exc_info=True)
-            output = await self.websocket.recv()
-            logging.info("Backward -> Return", exc_info=True)
-            return pickle.loads(output)
-        else:
-            await self.websocket.send(pickle.dumps(gradient))
+    def step(self):
+        requests.get(f'http://{self.host}:{self.port}/step')
 
-    async def zero_grads(self):
-        await self.websocket.send('zero_grads')
 
-    async def step(self):
-        await self.websocket.send('step')
+class ImageClientConnection(ClientConnection):
+    def __init__(self, port, host):
+        super().__init__(port, host)
+
+    def forward(self):
+        return requests.post(f'http://{self.host}:{self.port}/forward').content
+
+    def backward(self, gradient):
+        gradient = pickle.dumps(gradient)
+        requests.post(
+            f'http://{self.host}:{self.port}/backward', data=gradient)
 
 
 class LabelClientConnection(ClientConnection):
-    def __init__(self, websocket):
-        super().__init__(websocket)
+    def __init__(self, port, host):
+        super().__init__(port, host)
 
-    async def loss(self, outputs, ids):
-        await self.websocket.send('loss')
-        await self.websocket.send(pickle.dumps(outputs))
-        await self.websocket.send(pickle.dumps(ids))
-        logging.info("Forward -> Receive", exc_info=True)
-        output = await self.websocket.recv()
-        logging.info("Forward -> Return", exc_info=True)
-        return pickle.loads(output)
+    def loss(self, outputs, ids):
+        return requests.post(f'http://{self.host}:{self.port}/loss', json={'outputs': outputs, 'ids': ids}).json()
+
+    def forward(self, image_output):
+        data = requests.post(
+            f'http://{self.host}:{self.port}/forward', data=image_output).content
+        return pickle.loads(data)
+
+    def backward(self):
+        grad = requests.post(
+            f'http://{self.host}:{self.port}/backward').content
+        return pickle.loads(grad)

@@ -1,12 +1,14 @@
 from torch import nn, optim
 
 
-class LabelClient(nn.Module):
+class LabelModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.model = LabelNet()
         self.image_client_output = None
         self.grad_from_label = None
+        self.optimizer = optim.SGD(
+            self.model.parameters(), lr=0.01, momentum=0.9)
 
     def forward(self, image_client_output):
         self.image_client_output = image_client_output
@@ -23,8 +25,11 @@ class LabelClient(nn.Module):
     def eval(self):
         self.model.eval()
 
-    def get_optimizer(self):
-        return optim.SGD(self.model.parameters(), lr=0.01, momentum=0.9)
+    def step(self):
+        self.optimizer.step()
+
+    def zero_grad(self):
+        self.optimizer.zero_grad()
 
 
 class LabelNet(nn.Module):

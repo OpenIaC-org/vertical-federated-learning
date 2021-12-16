@@ -1,121 +1,83 @@
-import random
-import websockets
-import asyncio
-import pickle
+from flask import Flask, request, send_file
+from flask_cors import CORS, cross_origin
+import numpy as np
+from client_connection import ImageClientConnection, LabelClientConnection
 
 from splitNN import SplitNN
 from utils import *
+import time
 
-import logging
-logging.basicConfig(filename='./logs/log.log', level=logging.DEBUG)
+app = Flask(__name__)
+cors = CORS(app)
 
-
-class Server:
-    def __init__(self):
-        self.image_client = None
-        self.label_client = None
-        self.splitNN = None
-        self.ids = []
-
-    async def handler(self, websocket, path):
-        while True:
-            try:
-                logging.info("Handler -> Receive", exc_info=True)
-                data = await websocket.recv()
-                logging.info("Handler -> Return", exc_info=True)
-
-                await self.client_endpoints(websocket, data)
-                await self.controller_endpoints(websocket, data)
-
-            except websockets.exceptions.ConnectionClosed:
-                break
-
-    async def client_endpoints(self, websocket, data):
-        if data == 'label_connect':
-            self.label_client = websocket
-            print('Label client connected')
-
-        if data == 'image_connect':
-            self.image_client = websocket
-            print('Image client connected')
-
-        if self.splitNN is None and self.label_client is not None and self.image_client is not None:
-            print('Initializing splitNN')
-            self.splitNN = SplitNN(self.image_client, self.label_client)
-
-        if data == 'ids':
-            logging.info("IDs -> Receive", exc_info=True)
-            ids = pickle.loads(await websocket.recv())
-            logging.info("IDs -> Return", exc_info=True)
-            self.ids.append(ids)
-            if len(self.ids) == 2:
-                print('Got all IDs')
-
-    async def controller_endpoints(self, websocket, data):
-        if data == 'get ids':
-            await self.get_ids()
-
-        if data == 'permute':
-            self.common_ids = await self.find_id_permutation()
-            await self.send_to_both('common_ids')
-            await self.send_to_both(pickle.dumps(self.common_ids))
-            print('Sent common IDs to all clients')
-
-        if data == 'train':
-            if self.splitNN is None:
-                print('SplitNN not initialized')
-                return
-            print('Starting training')
-            await self.train()
-
-    async def get_ids(self):
-        if self.label_client is None:
-            print('Label client not connected')
-            return
-
-        if self.image_client is None:
-            print('Image client not connected')
-            return
-
-        await self.send_to_both('get_ids')
-
-    async def find_id_permutation(self):
-        if len(self.ids) != 2:
-            print('Incorrect number of ids: ' + str(len(self.ids)))
-            return
-
-        print('Finding common ids')
-        common_ids = list(set(self.ids[0]).intersection(self.ids[1]))
-        print(f'Found {len(common_ids)} common ids')
-        return common_ids
-
-    async def send_to_both(self, data):
-        await self.image_client.send(data)
-        await self.label_client.send(data)
-
-    async def train(self):
-        ids = random.sample(self.common_ids, len(
-            self.common_ids))  # Random order
-        loss = 0
-        current_chunks = chunks(ids, 64)
-        for batch in current_chunks:
-            print(batch)
-            await self.splitNN.zero_grads()
-            outputs = await self.splitNN.forward(batch)
-            loss = await self.splitNN.loss(outputs, batch)
-            loss.backward()
-            loss += loss.item() / len(current_chunks)
-            await self.splitNN.backward()
-            await self.splitNN.step()
-        print(loss)
+NUMBER_OF_IMAGES = 13500
+BATCH_SIZE = 128
 
 
-server = Server()
-start_server = websockets.serve(server.handler, '', 8000, ping_timeout=None)
+image_client = None
+label_client = None
+splitNN = None
 
-try:
-    asyncio.get_event_loop().run_until_complete(start_server)
-    print('Server started on port 8000')
-    asyncio.get_event_loop().run_forever()
-except KeyboardInterrupt:
-    print('Server stopped by keyboard')
+
+def initialize_splitNN():
+    global splitNN, image_client, label_client
+
+    if splitNN is None and label_client is not None and image_client is not None:
+        print('Initializing splitNN')
+        splitNN = SplitNN(image_client, label_client)
+
+
+@app.get('/connect-image-client')
+def image_connect():
+    global image_client
+
+    client_ip = request.access_route[-1]
+    port = request.args.get('port')
+    image_client = ImageClientConnection(port, client_ip)
+    print(f'Image client connected on {client_ip}:{port}')
+    return 'Connected'
+
+
+@app.get('/connect-label-client')
+def label_connect():
+    global label_client
+
+    client_ip = request.access_route[-1]
+    port = request.args.get('port')
+    label_client = LabelClientConnection(port, client_ip)
+    print(f'Label client connected on {client_ip}:{port}')
+    return 'Connected'
+
+
+@app.get('/train')
+def train():
+    if splitNN is None:
+        initialize_splitNN()
+
+    print('Training')
+    start = time.time()
+    for epoch in range(1, 11):
+        batches = NUMBER_OF_IMAGES // BATCH_SIZE
+        epoch_loss = 0
+        epoch_accuracy = []
+        for _ in range(batches):
+            splitNN.zero_grads()
+            output, loss, accuracy = splitNN.forward()
+            epoch_accuracy.append(accuracy)
+            epoch_loss += (loss.item() / (NUMBER_OF_IMAGES / BATCH_SIZE))
+            splitNN.backward()
+            splitNN.step()
+        print(f'Epoch {epoch}: {epoch_loss} - {np.mean(epoch_accuracy)}')
+    print(f'Training time: {time.time() - start}')
+    return 'Done training!'
+
+
+@cross_origin()
+@app.get('/metadata')
+def metadata():
+    return send_file('metadata.json')
+
+
+if __name__ == '__main__':
+    app.debug = True
+    app.run(host='0.0.0.0', port=8000)

@@ -1,29 +1,24 @@
 import torch
 
-from client_connection import ClientConnection
-
 
 class SplitNN(torch.nn.Module):
-    def __init__(self, image_websocket, label_websocket):
+    def __init__(self, image_client, label_client):
         super().__init__()
-        self.image_client = ClientConnection(image_websocket)
-        self.label_client = ClientConnection(label_websocket)
+        self.image_client = image_client
+        self.label_client = label_client
 
-    async def forward(self, input_ids):
-        image_client_output = await self.image_client.forward(input_ids)
-        return await self.label_client.forward(image_client_output)
+    def forward(self):
+        image_client_output = self.image_client.forward()
+        return self.label_client.forward(image_client_output)
 
-    async def backward(self):
-        grad_to_image_client = await self.label_client.backward()
-        await self.image_client.backward(grad_to_image_client)
+    def backward(self):
+        grad_to_image_client = self.label_client.backward()
+        self.image_client.backward(grad_to_image_client)
 
-    async def zero_grads(self):
-        await self.image_client.zero_grads()
-        await self.label_client.zero_grads()
+    def zero_grads(self):
+        self.image_client.zero_grads()
+        self.label_client.zero_grads()
 
-    async def step(self):
-        await self.image_client.step()
-        await self.label_client.step()
-
-    async def loss(self, outputs, batch):
-        return await self.label_client.loss(outputs, batch)
+    def step(self):
+        self.image_client.step()
+        self.label_client.step()

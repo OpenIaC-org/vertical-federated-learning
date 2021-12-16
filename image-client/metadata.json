@@ -1,0 +1,10 @@
+{
+  "type": "client",
+  "name": "Image Client",
+  "data": {
+    "type": "image",
+    "size": 9912422,
+    "resolution": "28x28",
+    "count": 60000
+  }
+}
