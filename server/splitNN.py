@@ -1,3 +1,4 @@
+import pickle
 import torch
 
 
@@ -8,7 +9,7 @@ class SplitNN(torch.nn.Module):
         self.label_client = label_client
 
     def forward(self):
-        image_client_output = self.image_client.forward()
+        image_client_output = pickle.loads(self.image_client.forward())
         return self.label_client.forward(image_client_output)
 
     def backward(self):
