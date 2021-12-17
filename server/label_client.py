@@ -40,6 +40,10 @@ class LabelClient():
         self.batch_counter += 1
         return current_loss, current_accuracy
 
+    def predict(self, image_client_output):
+        output = self.model.forward(image_client_output)
+        return output.argmax(dim=1, keepdim=True).item()
+
     def backward(self):
         return self.model.backward()
 

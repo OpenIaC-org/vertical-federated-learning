@@ -1,8 +1,13 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file, Response
 from flask_cors import CORS, cross_origin
 import numpy as np
+from numpy.core.numeric import cross
 from client_connection import ImageClientConnection
 from label_client import LabelClient
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import matplotlib.pyplot as plt
+import io
 
 from splitNN import SplitNN
 from utils import *
@@ -11,7 +16,7 @@ import time
 app = Flask(__name__)
 cors = CORS(app)
 
-NUMBER_OF_IMAGES = 13500
+NUMBER_OF_IMAGES = 2000
 BATCH_SIZE = 128
 
 
@@ -60,6 +65,38 @@ def train():
         print(f'Epoch {epoch}: {epoch_loss} - {np.mean(epoch_accuracy)}')
     print(f'Training time: {time.time() - start}')
     return 'Done training!'
+
+
+@cross_origin()
+@app.get('/predict/<image_id>')
+def predict(image_id):
+    data = label_client.trainset[int(image_id)]
+    label = data[1]
+    prediction = splitNN.predict(int(image_id))
+    return {'label': label, 'prediction': prediction}
+
+
+@cross_origin()
+@app.get('/image/<image_id>')
+def get_image(image_id):
+    data = label_client.trainset[int(image_id)]
+    image = data[0]
+    plot = create_plot(image)
+    return Response(plot.getvalue(), mimetype='image/png')
+
+
+def create_plot(image):
+    img = image.numpy().squeeze()
+    sizes = np.shape(img)
+    fig = Figure()
+    ax = plt.Axes(fig, [0., 0., 1., 1.])
+    ax.set_axis_off()
+    fig.add_axes(ax)
+    fig.set_size_inches(1. * sizes[0] / sizes[1], 1, forward=False)
+    ax.imshow(img)
+    output = io.BytesIO()
+    FigureCanvas(fig).print_png(output)
+    return output
 
 
 @cross_origin()

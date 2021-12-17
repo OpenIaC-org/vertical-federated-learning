@@ -25,3 +25,6 @@ class ImageClientConnection(ClientConnection):
         gradient = pickle.dumps(gradient)
         requests.post(
             f'http://{self.host}:{self.port}/backward', data=gradient)
+
+    def predict(self, image_id):
+        return requests.post(f'http://{self.host}:{self.port}/predict/{image_id}').content

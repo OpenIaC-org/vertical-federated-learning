@@ -12,6 +12,10 @@ class SplitNN(torch.nn.Module):
         image_client_output = pickle.loads(self.image_client.forward())
         return self.label_client.forward(image_client_output)
 
+    def predict(self, image_id):
+        image_client_output = pickle.loads(self.image_client.predict(image_id))
+        return self.label_client.predict(image_client_output)
+
     def backward(self):
         grad_to_image_client = self.label_client.backward()
         self.image_client.backward(grad_to_image_client)

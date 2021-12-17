@@ -32,6 +32,13 @@ max_batch_count = len(trainset) // BATCH_SIZE
 batch_counter = 0
 
 
+@app.post('/predict/<image_id>')
+def predict(image_id):
+    image = trainset[int(image_id)]
+    image_client_output = model.forward(image[0])
+    return pickle.dumps(image_client_output)
+
+
 @app.post('/forward')
 def forward():
     global model, batch_counter, loader_iterator
